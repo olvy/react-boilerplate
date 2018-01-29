@@ -1,3 +1,12 @@
+# Described changes:
+
+This is forked version of [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+with addition of [redux-auth-wrapper](https://github.com/mjrussell/redux-auth-wrapper) [React Router 4](https://github.com/mjrussell/redux-auth-wrapper/tree/master/examples/react-router-4) and practices from [react-redux-saga-boilerplate](https://github.com/gilbarbara/react-redux-saga-boilerplate). It looks like this: 
+
+<img width="1322" alt="screen shot 2018-01-29 at 9 30 06 am" src="https://user-images.githubusercontent.com/10334791/35499395-ce2ed4ba-04da-11e8-8ed5-d61b265fe001.png">
+
+# Original readme:
+
 <img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
 
 <br />
