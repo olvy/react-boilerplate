@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 
 import {
-  selectGlobal,
+  selectGit,
   makeSelectCurrentUser,
   makeSelectLoading,
   makeSelectError,
@@ -9,13 +9,13 @@ import {
   makeSelectLocation,
 } from '../selectors';
 
-describe('selectGlobal', () => {
-  it('should select the global state', () => {
-    const globalState = fromJS({});
+describe('selectGit', () => {
+  it('should select the git state', () => {
+    const gitState = fromJS({});
     const mockedState = fromJS({
-      global: globalState,
+      git: gitState,
     });
-    expect(selectGlobal(mockedState)).toEqual(globalState);
+    expect(selectGit(mockedState)).toEqual(gitState);
   });
 });
 
@@ -24,7 +24,7 @@ describe('makeSelectCurrentUser', () => {
   it('should select the current user', () => {
     const username = 'mxstbr';
     const mockedState = fromJS({
-      global: {
+      git: {
         currentUser: username,
       },
     });
@@ -37,7 +37,7 @@ describe('makeSelectLoading', () => {
   it('should select the loading', () => {
     const loading = false;
     const mockedState = fromJS({
-      global: {
+      git: {
         loading,
       },
     });
@@ -50,7 +50,7 @@ describe('makeSelectError', () => {
   it('should select the error', () => {
     const error = 404;
     const mockedState = fromJS({
-      global: {
+      git: {
         error,
       },
     });
@@ -63,7 +63,7 @@ describe('makeSelectRepos', () => {
   it('should select the repos', () => {
     const repositories = fromJS([]);
     const mockedState = fromJS({
-      global: {
+      git: {
         userData: {
           repositories,
         },

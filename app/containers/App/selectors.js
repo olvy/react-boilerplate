@@ -1,31 +1,31 @@
 /**
- * The global state selectors
+ * The git and user state selectors
  */
 
 import { createSelector } from 'reselect';
 
-const selectGlobal = (state) => state.get('global');
+const selectGit = (state) => state.get('git');
 
 const selectRoute = (state) => state.get('route');
 
 const makeSelectCurrentUser = () => createSelector(
-  selectGlobal,
-  (globalState) => globalState.get('currentUser')
+  selectGit,
+  (gitState) => gitState.get('currentUser')
 );
 
 const makeSelectLoading = () => createSelector(
-  selectGlobal,
-  (globalState) => globalState.get('loading')
+  selectGit,
+  (gitState) => gitState.get('loading')
 );
 
 const makeSelectError = () => createSelector(
-  selectGlobal,
-  (globalState) => globalState.get('error')
+  selectGit,
+  (gitState) => gitState.get('error')
 );
 
 const makeSelectRepos = () => createSelector(
-  selectGlobal,
-  (globalState) => globalState.getIn(['userData', 'repositories'])
+  selectGit,
+  (gitState) => gitState.getIn(['userData', 'repositories'])
 );
 
 const makeSelectLocation = () => createSelector(
@@ -33,11 +33,22 @@ const makeSelectLocation = () => createSelector(
   (routeState) => routeState.get('location').toJS()
 );
 
+const userSelector = (state) => state.get('user');
+
+const makeSelectData = () =>
+  createSelector(userSelector, (userState) => userState.get('data'));
+
+const makeSelectIsLoading = () =>
+  createSelector(userSelector, (userState) => userState.get('isLoading'));
+
 export {
-  selectGlobal,
+  selectGit,
   makeSelectCurrentUser,
   makeSelectLoading,
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  userSelector,
+  makeSelectData,
+  makeSelectIsLoading,
 };

@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import appReducer from '../reducer';
+import appReducer from '../reducers/github';
 import {
   loadRepos,
   reposLoaded,
